@@ -5,7 +5,6 @@ Projeto desenvolvimento em java utilizando os conceitos da Programação Orienta
 Antes de tudo, é necessário ter a JRE instalada em sua máquina para que o computador consiga processar todo o sistema.
 
 1. Clone o repositório ou baixe os arquivos;
-2.  Clone o repositório ou baixe os arquivos.
 2. Abra o projeto em uma IDE Java, como IntelliJ ou Eclipse.
 3. Execute a classe `Program.java`.
 4. Utilize o menu no console para interagir com o sistema.
