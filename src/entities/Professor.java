@@ -32,7 +32,6 @@ public class Professor extends Pessoa implements Autenticavel {
 
     @Override
     public String toString() {
-        return String.format("Professor: %s %nEmail: %s%nCpf: %d%nSiepe: %d", getNome(), getEmail(), getCpf(), getSiepe()
-        );
+        return String.format("Professor: %s %nEmail: %s%nCpf: %s%nSiepe: %d%n", getNome(), getEmail(), getCpf(), getSiepe());
     }
 }
