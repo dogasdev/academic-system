@@ -51,7 +51,7 @@ public class Main{
         System.out.println("Email: ");
         String email = userInput.nextLine();
         System.out.println("Cpf: ");
-        int cpf = Integer.parseInt(userInput.nextLine());
+        String cpf = userInput.nextLine();
         System.out.println("Insira o número de matrícula: ");
         int matricula = Integer.parseInt(userInput.nextLine());
         Aluno aluno = new Aluno(nome, email, cpf, matricula);
@@ -73,7 +73,7 @@ public class Main{
         System.out.println("Email:");
         String email = userInput.nextLine();
         System.out.println("CPF:");
-        int cpf = Integer.parseInt(userInput.nextLine());
+        String cpf = userInput.nextLine();
         System.out.println("Código Siepe:");
         int siepe = Integer.parseInt(userInput.nextLine());
         System.out.println("Senha:");
