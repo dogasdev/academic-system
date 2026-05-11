@@ -1,8 +1,7 @@
 package entities;
-
 public class Coordenador extends Professor{
 
-    public Coordenador(String nome, String email, int cpf, int siepe, int senha){
+    public Coordenador(String nome, String email, String cpf, int siepe, int senha){
         super(nome, email, cpf, siepe, senha);
     }
 
