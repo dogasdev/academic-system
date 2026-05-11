@@ -1,14 +1,12 @@
 package entities;
-
 import Interfaces.Avaliavel;
-
 import java.util.ArrayList;
 
 public class Aluno extends Pessoa implements Avaliavel {
     private int matricula;
     private ArrayList<Double> notasAluno = new ArrayList<>();
 
-    public Aluno(String nome, String email, int cpf, int matricula){
+    public Aluno(String nome, String email, String cpf, int matricula){
         super(nome, email, cpf);
         this.matricula = matricula;
         this.notasAluno = notasAluno;
