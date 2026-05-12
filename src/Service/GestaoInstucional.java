@@ -36,12 +36,12 @@ public class GestaoInstucional {
     public void lancarNotas(int matricula, double nota) {
         Aluno aluno = buscarAluno(matricula);
 
-        if (aluno != null) {
-            aluno.adicionarNota(nota);
-            System.out.printf("[ ✔ ] Nota: %.2f lançada com sucesso!%n%n", nota);
-        } else {
-            System.out.println("Aluno não encontrado!");
+        if(aluno == null){
+            System.out.println("[x] Aluno não encontrado.");
+            return;
         }
+        aluno.adicionarNota(nota);
+        System.out.printf("Nota [ %.2f ] lançada com sucesso!%n%n", nota);
     }
 
     public void listarComunidade() {
