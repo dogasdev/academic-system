@@ -3,13 +3,12 @@ import Interfaces.Avaliavel;
 import java.util.ArrayList;
 
 public class Aluno extends Pessoa implements Avaliavel {
-    private int matricula;
+    final private int matricula;
     private ArrayList<Double> notasAluno = new ArrayList<>();
 
     public Aluno(String nome, String email, String cpf, int matricula){
         super(nome, email, cpf);
         this.matricula = matricula;
-        this.notasAluno = notasAluno;
     }
 
     public int getMatricula() {
@@ -17,9 +16,11 @@ public class Aluno extends Pessoa implements Avaliavel {
     }
 
     public void adicionarNota(double nota){
+        if(nota < 0.0 || nota > 10.0){
+            System.out.println("Nota inválida!");
+        }
         notasAluno.add(nota);
     }
-
 
     @Override
     public double getMediaFinal(){
@@ -37,7 +38,7 @@ public class Aluno extends Pessoa implements Avaliavel {
 
     @Override
     public String toString() {
-        return String.format("Aluno: %s%nEmail: %s%nCpf: %d%nMatrícula: %d", getNome(), getEmail(), getCpf(), getMatricula()
+        return String.format("Aluno: %s%nEmail: %s%nCpf: %s%nMatrícula: %d", getNome(), getEmail(), getCpf(), getMatricula()
         );
     }
 }
