@@ -1,0 +1,45 @@
+package service;
+
+import interfaces.Avaliavel;
+import java.util.ArrayList;
+import java.util.List;
+
+public class RelatorioAcademico {
+    private List<Avaliavel> listaAvaliados;
+
+
+    public RelatorioAcademico(){
+        this.listaAvaliados = new ArrayList<>();
+    }
+    public void adicionarDados(Avaliavel objeto){
+        if(objeto != null){
+            this.listaAvaliados.add(objeto);
+        }
+    }
+
+    public double calcularMediaGeral(){
+        if(listaAvaliados.isEmpty()){
+            return 0.0;
+        }
+        double somaMedias = 0.0;
+
+        for(Avaliavel objAvaliavel : listaAvaliados){
+            somaMedias += objAvaliavel.getMediaFinal();
+        }
+
+        return somaMedias / listaAvaliados.size();
+    }
+
+    public void exibirEstatisticas(){
+        System.out.println("=== RELATÓRIO ACADÊMICO ===");
+        System.out.printf("Média Geral: %.2f", calcularMediaGeral());
+        System.out.printf("Quantidade de avaliados: %d", listaAvaliados.size());
+
+        if(!listaAvaliados.isEmpty()){
+            for(Avaliavel objAvaliavel : listaAvaliados){
+                System.out.printf(" -> " + objAvaliavel.toString() + "| Média: %.2f%n" + objAvaliavel.getMediaFinal());
+            }
+        }
+    }
+
+}
