@@ -95,10 +95,17 @@ public class Main{
     public static void menuLancarNota(Scanner userInput){
         System.out.println("[INSIRA A MATRICULA DO ALUNO]");
         int matricula = Integer.parseInt(userInput.nextLine());
+
+        Aluno aluno = sistemaSecretaria.buscarAluno(matricula);
+
+        if(aluno == null){
+            System.out.println("[x] Aluno não encontrado");
+            return;
+        }
+
         System.out.println("Nota: ");
         double nota = Double.parseDouble(userInput.nextLine());
         sistemaSecretaria.lancarNotas(matricula, nota);
-
     }
 
     public static void menuListarComunidade(){
@@ -137,6 +144,5 @@ public class Main{
         }catch(Exception e){
             return 0;
         }
-
     }
 }
