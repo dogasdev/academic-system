@@ -1,5 +1,5 @@
 package entities;
-import Interfaces.Avaliavel;
+import interfaces.Avaliavel;
 import java.util.ArrayList;
 
 public class Aluno extends Pessoa implements Avaliavel {
