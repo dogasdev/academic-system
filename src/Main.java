@@ -1,10 +1,12 @@
 import entities.Aluno;
 import entities.*;
+import service.RelatorioAcademico;
+
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Main{
-    static Service.GestaoInstucional sistemaSecretaria = new Service.GestaoInstucional();
+    static service.GestaoInstucional sistemaSecretaria = new service.GestaoInstucional();
     public static void main(String[] args) {
         int opcao;
         Scanner userInput = new Scanner(System.in).useLocale(Locale.US);
@@ -26,22 +28,25 @@ public class Main{
                     menuListarComunidade();
                     break;
                 case 5:
-                    menuExibirEstatisticas(userInput);
+                    menuExibirEstatisticaAluno(userInput);
                     break;
                 case 6:
-                    menuExibirAutenticacao(userInput);
+                    menuExibirEstatisticas();
                     break;
                 case 7:
+                    menuExibirAutenticacao(userInput);
+                    break;
+                case 8:
                     finalizarPrograma();
                     break;
                 default:
                     System.out.println("[x] Opção inválida! Tente novamente.");
             }
-        }while(opcao != 7);
+        }while(opcao != 8);
     }
     public static void exibirMenu(){
         System.out.println("=== SISTEMA ACADÊMICO ===");
-        System.out.println("[1] Cadastrar aluno\n[2] Cadastrar Professor/Coordenador\n[3] Lançar notas do Aluno\n[4] Listar comunidade acadêmica\n[5] Exibir Estatísticas\n[6] Acesso Administrativo\n[7] Sair\n\nInsira uma opção: ");
+        System.out.println("[1] Cadastrar aluno\n[2] Cadastrar Professor/Coordenador\n[3] Lançar notas do Aluno\n[4] Listar comunidade acadêmica\n[5] Exibir Estatísticas do Aluno \n[6] Exibir Estatísticas\n[7] Acesso Administrativo\n[8] Sair\n\nInsira uma opção: ");
     }
 
     public static void menuCadastrarAluno(Scanner userInput){
@@ -112,7 +117,7 @@ public class Main{
         sistemaSecretaria.listarComunidade();
     }
 
-    public static void menuExibirEstatisticas(Scanner userInput){
+    public static void menuExibirEstatisticaAluno(Scanner userInput){
         System.out.println("[INSIRA A MATRICULA DO ALUNO]");
         int matricula = Integer.parseInt(userInput.nextLine());
         Aluno aluno = sistemaSecretaria.buscarAluno(matricula);
@@ -122,6 +127,14 @@ public class Main{
         }else{
             System.out.println("[x] Aluno não encontrado!");
         }
+    }
+
+    public static void menuExibirEstatisticas(){
+        RelatorioAcademico relatorio = new RelatorioAcademico();
+        for(Aluno aluno : sistemaSecretaria.getListaAlunos()){
+            relatorio.adicionarDados(aluno);
+        }
+        relatorio.exibirEstatisticas();
     }
 
     public static void menuExibirAutenticacao(Scanner userInput){
