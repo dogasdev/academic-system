@@ -15,27 +15,27 @@ pois as pessoas podem ter diferentes tipos de nomes, idades, matrículas e entre
 
 # Exemplo de Saída pelo console
 
-=== SISTEMA ACADÊMICO ===
-[1] Cadastrar aluno
-[2] Cadastrar Professor/Coordenador
-[3] Lançar notas do Aluno
-[4] Listar comunidade acadêmica
-[5] Exibir Estatísticas
-[6] Acesso Administrativo
-[7] Sair
+=== SISTEMA ACADÊMICO ===<br>
+[1] Cadastrar aluno<br>
+[2] Cadastrar Professor/Coordenador<br>
+[3] Lançar notas do Aluno<br>
+[4] Listar comunidade acadêmica<br>
+[5] Exibir Estatísticas<br>
+[6] Acesso Administrativo<br>
+[7] Sair<br>
 
 Insira uma opção: 1
 
-[INSIRA AS INFORMAÇÕES DO ALUNO]
-Nome: Eduarda
-Matricula: 01
+[INSIRA AS INFORMAÇÕES DO ALUNO]<br>
+Nome: Eduarda<br>
+Matricula: 01<br>
 
 Aluno criado com sucesso!
 
 Insira uma opção: 3
 
-[INSIRA A MATRICULA DO ALUNO]
-Matricula: 01
-Nota: 7.5
+[INSIRA A MATRICULA DO ALUNO]<br>
+Matricula: 01<br>
+Nota: 7.5<br>
 
 Nota 7.5 lançada com sucesso!
