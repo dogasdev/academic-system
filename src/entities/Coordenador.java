@@ -18,7 +18,7 @@ public class Coordenador extends Professor{
 
     @Override
     public String toString() {
-        return String.format("Coordenador: %s %nEmail: %s%nCpf: %d%nSiepe: %d", getNome(), getEmail(), getCpf(), getSiepe()
+        return String.format("Coordenador: %s %nEmail: %s%nCpf: %s%nSiepe: %d", getNome(), getEmail(), getCpf(), getSiepe()
         );
     }
 }
